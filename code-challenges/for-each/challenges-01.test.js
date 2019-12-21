@@ -33,17 +33,20 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i = 0; i < times; i++) {
+    addValues(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
-
-Write a function named removeOne that takes in a number and an array. If the number divided by three has a remainder of two, pop one element off of the array.
+ and an array. If the number divided by three has a remainder of two, pop one element off of the arra
+Write a function named removeOne that takes in a numbery.
 
 Hint: you may want to look into the modulo operation.
 
@@ -53,11 +56,17 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeOne = (num, arr) => {
-  // Solution code here...
+  if (num % 3 === 2)
+  {
+    arr.pop();
+  }
 };
 
 const removeElements = (arr, callback) => {
-  // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    removeOne(arr[i],arr);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +76,10 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-  // Solution code here...
+  arr.forEach(element => {
+    removeOne(arr[element],arr);
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,7 +114,13 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  var item = [];
+  availableItems.forEach (element => {
+    if(element.available === true){
+      item.push(element.name);
+    }
+  });
+  return item;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,7 +138,22 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  let output = [];
+  arr.forEach(element => {
+    if(element % 3 === 0 && element % 5 === 0){
+      output.push('Fizz Buzz');
+    }
+    else if (element % 3 === 0){
+      output.push('Fizz');
+    }
+    else if (element % 5 === 0){
+      output.push('Buzz');
+    }
+    else{
+      output.push(element);
+    }
+  });
+  return output;
 };
 
 /* ------------------------------------------------------------------------------------------------
