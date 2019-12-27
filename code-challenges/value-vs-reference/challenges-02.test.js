@@ -28,9 +28,8 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   var a = arr[0];
-  arr.pop;
   arr.push(a);
-  return arr;
+  console.log(arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,8 +48,8 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
-  yearBorn: 1947;
-  console.log(obj,'yearBorn: 1947');
+  obj.yearBorn=year;
+  console.log(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,10 +66,10 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-  isAuthor : true;
   for (let i = 0; i < people.length; i++) {
-    people[i].isAuthor;    
+    people[i].isAuthor = true;    
   }  
+  console.log(people);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,10 +88,11 @@ console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
 const append = (arr1, arr2) => {
-  var arr3 = [];
-  arr3 = arr1.concat(arr2);
-  console.log(arr3);
-};
+ arr2.forEach(element => {
+   arr1.push(element);
+ });
+ };
+  
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
