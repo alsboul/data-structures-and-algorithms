@@ -28,8 +28,12 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
-};
+  let array = [];
+  for (let i = 0; i < arr.length; i++) {
+    array.push(arr.charAt(i));
+  }
+  return array; 
+  };
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -142,7 +146,7 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  return str.slice(0,str.length - numberOfCharacters);
 };
 
 
