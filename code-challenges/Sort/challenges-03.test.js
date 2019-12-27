@@ -7,6 +7,10 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
+  arr.sort(function (x, y) {
+    return x - y;
+  });
+  return arr.reverse();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,6 +35,10 @@ Write a function named sortByLength that takes in an array of strings and return
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
+  arr.sort(function (x ,y){
+    return x.length - y.length; 
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,7 +50,20 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+  arr.sort(function (x ,y ){
+    //make all of the array lower case because the sort will change if the array is upper case and lower.
+     var a = x.toLowerCase();
+     var b = y.toLowerCase();
+
+    if(a < b){
+      return - 1;
+    }
+    if(a > b){
+      return 1;
+    }
+   
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,7 +80,10 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  arr.sort((x , y) => {
+    return x.price - y.price;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,7 +95,11 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
+  // first we need to convarte the number to string to make length for them
+  arr.sort(function(x , y){
+    return x.toString().length - y.toString().length;
+  });
+  return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -93,7 +121,16 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+  arr.sort((x , y) => {
+    //make if statemnt to check the last name for every object.
+    if (x.lastName < y.lastName){
+      return - 1;
+    }
+    if(x.lastName > y.lastName){
+      return 1;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
