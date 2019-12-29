@@ -26,7 +26,14 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  let find = /[A-Z]\w+/g
+  let arr =str.match(find);
+  if(arr){
+    return arr;
+  }
+  else{
+    return [];
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
