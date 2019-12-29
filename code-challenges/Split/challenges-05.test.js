@@ -15,7 +15,12 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  result.push(str);
+  let strLength = str.length;
+  for (let i = 0; i < (strLength) ; i++) {
+    str = str.slice(1 , str.length);
+    result.push(str);
+  }
   return result;
 };
 
